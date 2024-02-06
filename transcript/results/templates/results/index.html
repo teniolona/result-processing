@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        /*.labelclass {
+            font-size: small;
+            font-family: "poppins";
+            color: black;
+        }*/
+        .name1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .table2 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        tr, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .tdcenter {
+            text-align: center;
+        }
+        .bold {
+            font-weight: 600;
+        }
+    </style>
+    {#{% load widget_tweaks %} #}
+</head>
+<body>
+    <h2 style="text-align:center">STUDENT<br>MINI-TRANSCRIPT</h2>
+    <div style="display: flex; justify-content:space-evenly; padding: 1rem 0rem">
+        <div class="bold">
+            <p>STUDENT NAME:</p>
+            <p>MATRIC NUMBER:</p>
+            <p>COLLEGE:</p>
+            <p>PROGRAMME:</p>
+            <p>LEVEL:</p>
+        </div>
+        <div>
+            {#{% for result in  results%}#}
+            <p>{{ studentlname }} {{ studentfname }}</p>
+            <p>{{ studentmatric }}</p>
+            <p>{{ studentcollege }}</p>
+            <p>{{ studentprogramme }}</p>
+            <p>{{ studentlevel }}</p>
+            {#{% endfor %}#}
+        </div>
+        <div style="width: 160px; height:160px; border:2px solid #d1d1d1">
+            <img src="" alt="Profile Image">
+        </div>
+        {#<!-- <p>{{ title1 }}</p> -->#}
+    </div>
+    <hr style="border:1px solid #d1d1d1;">
+    
+    <div class="bold" style="padding: 1rem; display:flex; justify-content:space-evenly">
+        <p>MATRIC NUMBER: {{ studentmatric }}</p>
+        <p>SESSION: </p>
+        <p>LEVEL: </p>
+        <p>SEMESTER: </p>
+    </div>
+
+    <main style="width:max-content; margin:auto; border:1px solid #d1d1d1; padding:1rem;";>
+        <table class="name1">
+            <thead class="tdcenter">
+                <th>S/No</th>
+                <th>Course<br>Code</th>
+                <th>Course<br>Title</th>
+                <th>Course<br>Credit</th>
+                <th>Mark<br>Scored</th>
+                <th>Letter<br>Grade</th>
+                <th>Grade<br>Point</th>
+                <th>Weighted Grade<br>Point</th>
+            </thead>
+            <tbody class="tdcenter">
+                <tr>
+                    <td>{{ course1.id }}</td>
+                    <td>{{ course1.coursecode }}</td>
+                    <td>{{ course1.coursetitle }}</td>
+                    <td>{{ course1.coursecredit }}</td>
+                    <td>{{ course1.coursemark }}</td>
+                    <td>{{ course1.lettergrade }}</td>
+                    <td>{{ course1.gp }}</td>
+                    <td>{{ course1.weightedgp }}</td>
+                </tr>
+                <tr>
+                    <td>{{ course2.id }}</td>
+                    <td>{{ course2.coursecode }}</td>
+                    <td>{{ course2.coursetitle }}</td>
+                    <td>{{ course2.coursecredit }}</td>
+                    <td>{{ course2.coursemark }}</td>
+                    <td>{{ course2.lettergrade }}</td>
+                    <td>{{ course2.gp }}</td>
+                    <td>{{ course2.weightedgp }}</td>
+                </tr>
+                <tr>
+                    <td>{{ course3.id }}</td>
+                    <td>{{ course3.coursecode }}</td>
+                    <td>{{ course3.coursetitle }}</td>
+                    <td>{{ course3.coursecredit }}</td>
+                    <td>{{ course3.coursemark }}</td>
+                    <td>{{ course3.lettergrade }}</td>
+                    <td>{{ course3.gp }}</td>
+                    <td>{{ course3.weightedgp }}</td>
+                </tr>
+                <tr>
+                    <td>{{ course4.id }}</td>
+                    <td>{{ course4.coursecode }}</td>
+                    <td>{{ course4.coursetitle }}</td>
+                    <td>{{ course4.coursecredit }}</td>
+                    <td>{{ course4.coursemark }}</td>
+                    <td>{{ course4.lettergrade }}</td>
+                    <td>{{ course4.gp }}</td>
+                    <td>{{ course4.weightedgp }}</td>
+                </tr>
+                <tr>
+                    <td>{{ course5.id }}</td>
+                    <td>{{ course5.coursecode }}</td>
+                    <td>{{ course5.coursetitle }}</td>
+                    <td>{{ course5.coursecredit }}</td>
+                    <td>{{ course5.coursemark }}</td>
+                    <td>{{ course5.lettergrade }}</td>
+                    <td>{{ course5.gp }}</td>
+                    <td>{{ course5.weightedgp }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="name1" style="margin-top:1rem; width:100%;">
+            <thead>
+                <th>TC</th>
+                <th>TWGP</th>
+                <th>GPA</th>
+                <th>CTC</th>
+                <th>CTWGP</th>
+                <th>CGPA</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ credits }}</td>
+                    <td>{{ totalwgp }}</td>
+                    <td>{{ gradepa }}</td>
+                    <td>{{ credits }}</td>
+                    <td>{{ totalwgp }}</td>
+                    <td>{{ gradepa }}</td>
+                </tr>
+                <tr>
+                    <td>Remark: GS</td>
+                </tr>
+                <tr>
+                    <td>Outsanding Courses: Nil</td>
+                </tr>
+                <tr>
+                    <td>Class of Degree: First Class</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
